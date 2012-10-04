@@ -8,19 +8,28 @@ class Game
 
     @beats = {:rock => [:scissors, :lizard], :paper => [:rock, :spok], :scissors => [:paper, :lizard], :lizard => [:paper, :spok], :spok => [:rock, :scissors]}
   
-    @player_selection = (ARGV.shift || '').to_sym
-    @computer_selection = :spok
     
-    if !@beats.keys.include? @player_selection
-      puts "You must type one of these selection: #{@beats.keys.join(', ')}"
-      return
-    end
+    
+    
 
     play
 
   end
 
+  def get_player_play()
+        player_play = (ARGV.shift || '').to_sym
+        if @beats.keys.include? @player_selection
+		return player_play
+	else
+		return nil
+	end
+  end
+
   def play()
+
+      	puts "You must type one of these selection: #{@beats.keys.join(', ')}" if !player_play = get_player_play
+	
+	
     
     if @beats[@computer_selection].include? @player_selection
        puts "Computer win"
