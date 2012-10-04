@@ -7,40 +7,35 @@ class Game
   def initialize()
 
     @beats = {:rock => [:scissors, :lizard], :paper => [:rock, :spok], :scissors => [:paper, :lizard], :lizard => [:paper, :spok], :spok => [:rock, :scissors]}
-  
-    
-    
-    
 
-    play
+    # obtenemos la selección del jugador
+    @player_selection = (ARGV.shift || '').to_sym
 
-  end
-
-  def get_player_play()
-        player_play = (ARGV.shift || '').to_sym
-        if @beats.keys.include? @player_selection
-		return player_play
-	else
-		return nil
-	end
+    # comprobamos que la selección del jugador sea correcta
+    if !@beats.keys.include? @player_selection
+      puts "You must type one of these selection: #{@beats.keys.join(', ')}"
+    else
+      # lanzamos el juego
+      play
+    end
   end
 
   def play()
 
-      	puts "You must type one of these selection: #{@beats.keys.join(', ')}" if !player_play = get_player_play
-	
-	
+    computer_selection = @beats.keys.sample
+
+    puts "Your selection:     #{@player_selection}"
+    puts "Computer selection: #{computer_selection}"
     
-    if @beats[@computer_selection].include? @player_selection
-       puts "Computer win"
-    elsif @beats[@player_selection].include? @computer_selection
-       puts "You win"
+    if @beats[computer_selection].include? @player_selection
+      puts "Computer won!"
+    elsif @beats[@player_selection].include? computer_selection
+      puts "You won!"
     else
-       puts "It's a tie"
+      puts "Is a draw!"
     end
 
   end
-
 end
 
 newGame = Game.new
