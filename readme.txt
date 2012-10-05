@@ -12,15 +12,15 @@ Practica de laboratorio 2
 4) Actualice el  control de versiones remoto.
 5) Indique la URL del repositorio que contiene su solucion
 
-La implementación la haré con una pequeña modificación, el juego será "Pieda, Papel, Tijeras, Lagarto o Spok"
+La implementación la haré con una pequeña modificación, el juego será "Pieda, Papel, Tijeras, Lagarto o Spock"
 
 “Las tijeras cortan el papel, el papel cubre a la piedra, la piedra aplasta al lagarto, el lagarto envenena a Spock, Spock destroza las tijeras, las tijeras decapitan al lagarto, el lagarto se come el papel, el papel refuta a Spock, Spock vaporiza la piedra, y, como es habitual… la piedra aplasta las tijeras.” - Sheldon (The big bang theory)
 
 Reglas victoria:
 
 Piedra	 vence a  Tijeras, lagarto
-Papel	 vence a  Piedra, Spok
+Papel	 vence a  Piedra, Spock
 Tijeras	 vence a  Papel, Lagarto
-Lagarto	 vence a  Papel, Spok
+Lagarto	 vence a  Papel, Spock
 Spok	 vence a  Piedra, Tijeras
 
