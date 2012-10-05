@@ -1,12 +1,12 @@
 #
-# Laboratorio 2. Piedra, Papel, Tijeras, Largaro o Spok
+# Laboratorio 2. Piedra, Papel, Tijeras, Largaro o spock
 #
 
 class Game
 
   def initialize()
 
-    @beats = {:rock => [:scissors, :lizard], :paper => [:rock, :spok], :scissors => [:paper, :lizard], :lizard => [:paper, :spok], :spok => [:rock, :scissors]}
+    @beats = {:rock => [:scissors, :lizard], :paper => [:rock, :spock], :scissors => [:paper, :lizard], :lizard => [:paper, :spock], :spock => [:rock, :scissors]}
 
     # obtenemos la selección del jugador
     @player_selection = (ARGV.shift || '').to_sym
